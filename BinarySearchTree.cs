@@ -43,6 +43,25 @@ namespace BinarySearchTree
             }
         }
 
+        public bool Find(int value)
+        {
+            return Find(Root, value);
+        }
+
+        private bool Find(Node node, int value)
+        {
+            if (value < node.Value && node.Left != null)
+            {
+                return Find(node.Left, value);
+            }
+            else if (value > node.Value && node.Right != null)
+            {
+                return Find(node.Right, value);
+            }
+
+            return node.Value == value;
+        }
+
         public void PreOrder()
         {
             PreOrder(Root);

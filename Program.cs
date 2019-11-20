@@ -24,6 +24,9 @@ namespace BinarySearchTree
             Console.WriteLine();
             tree.BreadthFirst();
             Console.WriteLine();
+
+            Console.WriteLine(tree.Find(3));
+            Console.WriteLine(tree.Find(88));
         }
     }
 }
