@@ -1,3 +1,5 @@
+using System;
+
 namespace BinarySearchTree
 {
     class BinarySearchTree
@@ -38,6 +40,64 @@ namespace BinarySearchTree
                     node.Right = new Node(value);
                 }
             }
+        }
+
+        public void PreOrder()
+        {
+            PreOrder(Root);
+        }
+
+        private void PreOrder(Node node)
+        {
+            Console.Write(node.Value + " -> ");
+            
+            if (node.Left != null)
+            {
+                PreOrder(node.Left);
+            }
+            if (node.Right != null)
+            {
+                PreOrder(node.Right);
+            }
+        }
+
+        public void InOrder()
+        {
+            InOrder(Root);
+        }
+
+        private void InOrder(Node node)
+        {
+            if (node.Left != null)
+            {
+                InOrder(node.Left);
+            }
+            
+            Console.Write(node.Value + " -> ");
+
+            if (node.Right != null)
+            {
+                InOrder(node.Right);
+            }
+        }
+
+        public void PostOrder()
+        {
+            PostOrder(Root);
+        }
+
+        private void PostOrder(Node node)
+        {
+            if (node.Left != null)
+            {
+                PostOrder(node.Left);
+            }
+            if (node.Right != null)
+            {
+                PostOrder(node.Right);
+            }
+            
+            Console.Write(node.Value + " -> ");
         }
     }
 }
