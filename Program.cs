@@ -22,6 +22,8 @@ namespace BinarySearchTree
             Console.WriteLine();
             tree.PostOrder();
             Console.WriteLine();
+            tree.BreadthFirst();
+            Console.WriteLine();
         }
     }
 }

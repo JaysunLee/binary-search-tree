@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BinarySearchTree
 {
@@ -98,6 +99,26 @@ namespace BinarySearchTree
             }
             
             Console.Write(node.Value + " -> ");
+        }
+
+        public void BreadthFirst()
+        {
+            var queue = new Queue<Node>();
+            queue.Enqueue(Root);
+
+            while (queue.TryDequeue(out var node))
+            {                
+                Console.Write(node.Value + " -> ");
+
+                if (node.Left != null)
+                {
+                    queue.Enqueue(node.Left);
+                }
+                if (node.Right != null)
+                {
+                    queue.Enqueue(node.Right);
+                }
+            }
         }
     }
 }
