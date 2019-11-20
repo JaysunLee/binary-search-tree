@@ -16,21 +16,27 @@ namespace BinarySearchTree
 
         private void Insert(Node node, int value)
         {
-            if (value <= node.Value && node.Left != null)
+            if (value <= node.Value)
             {
-                Insert(node.Left, value);
-            }
-            else if (value <= node.Value)
-            {
-                node.Left = new Node(value);
-            }
-            else if (value > node.Value && node.Right != null)
-            {
-                Insert(node.Right, value);
+                if (node.Left != null)
+                {
+                    Insert(node.Left, value);
+                }
+                else
+                {
+                    node.Left = new Node(value);
+                }
             }
             else if (value > node.Value)
             {
-                node.Right = new Node(value);
+                if (node.Right != null)
+                {
+                    Insert(node.Right, value);
+                }
+                else
+                {
+                    node.Right = new Node(value);
+                }
             }
         }
     }
