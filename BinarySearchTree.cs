@@ -19,7 +19,7 @@ namespace BinarySearchTree
 
         private void Insert(Node node, int value)
         {
-            if (value <= node.Value)
+            if (value < node.Value)
             {
                 if (node.Left != null)
                 {

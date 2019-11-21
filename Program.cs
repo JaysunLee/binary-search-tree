@@ -16,6 +16,8 @@ namespace BinarySearchTree
             tree.Insert(5);
             tree.Insert(7);
 
+            tree.Insert(3); // won't insert, value already exists
+
             tree.PreOrder();
             Console.WriteLine();
             tree.InOrder();
