@@ -29,6 +29,10 @@ namespace BinarySearchTree
 
             Console.WriteLine(tree.Find(3));
             Console.WriteLine(tree.Find(88));
+
+            tree.Delete(4);
+            tree.InOrder();
+            Console.WriteLine();
         }
     }
 }

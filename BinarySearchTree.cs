@@ -62,6 +62,57 @@ namespace BinarySearchTree
             return node.Value == value;
         }
 
+        public void Delete(int value)
+        {
+            Root = Delete(Root, value);
+        }
+
+        private Node Delete(Node node, int value)
+        {
+            if (node == null)
+            {
+                return node;
+            }
+            else if (value < node.Value)
+            {
+                node.Left = Delete(node.Left, value);
+            }
+            else if (value > node.Value)
+            {
+                node.Right = Delete(node.Right, value);
+            }
+            else
+            {
+                if (node.Left == null)
+                {
+                    return node.Right;
+                }
+                else if (node.Right == null)
+                {
+                    return node.Left;
+                }
+
+                node.Value = minimumValue(node.Right);
+
+                node.Right = Delete(node.Right, node.Value);
+            }
+
+            return node;
+        }
+
+        private int minimumValue(Node node)
+        {
+            int minimum = node.Value;
+
+            while (node.Left != null)
+            {
+                minimum = node.Left.Value;
+                node = node.Left;
+            }
+
+            return minimum;
+        }
+
         public void PreOrder()
         {
             PreOrder(Root);
