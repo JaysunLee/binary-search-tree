@@ -36,6 +36,8 @@ namespace BinarySearchTree
 
             tree.PreOrderIterative();
             Console.WriteLine();
+            tree.PostOrderIterative();
+            Console.WriteLine();
         }
     }
 }

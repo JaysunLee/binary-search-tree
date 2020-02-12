@@ -192,6 +192,34 @@ namespace BinarySearchTree
             Console.Write(node.Value + " -> ");
         }
 
+        public void PostOrderIterative()
+        {
+            var stack = new Stack<Node>();
+            stack.Push(Root);
+            var output = new Stack<Node>();
+
+            while (stack.Count > 0)
+            {
+                Node current = stack.Pop();
+                output.Push(current);
+
+                if (current.Left != null)
+                {
+                    stack.Push(current.Left);
+                }
+                if (current.Right != null)
+                {
+                    stack.Push(current.Right);
+                }
+            }
+
+            while (output.Count > 0)
+            {
+                Node current = output.Pop();
+                Console.Write(current.Value + " -> ");
+            }
+        }
+
         public void BreadthFirst()
         {
             var queue = new Queue<Node>();
