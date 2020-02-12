@@ -33,6 +33,9 @@ namespace BinarySearchTree
             tree.Delete(4);
             tree.InOrder();
             Console.WriteLine();
+
+            tree.PreOrderIterative();
+            Console.WriteLine();
         }
     }
 }

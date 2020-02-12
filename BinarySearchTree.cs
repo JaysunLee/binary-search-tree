@@ -132,6 +132,27 @@ namespace BinarySearchTree
             }
         }
 
+        public void PreOrderIterative()
+        {
+            var stack = new Stack<Node>();
+            stack.Push(Root);
+
+            while (stack.Count > 0)
+            {
+                Node current = stack.Pop();
+                Console.Write(current.Value + " -> ");
+
+                if (current.Right != null)
+                {
+                    stack.Push(current.Right);
+                }
+                if (current.Left != null)
+                {
+                    stack.Push(current.Left);
+                }
+            }
+        }
+
         public void InOrder()
         {
             InOrder(Root);
